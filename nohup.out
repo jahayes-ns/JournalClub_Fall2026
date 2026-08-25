@@ -2332,3 +2332,200 @@ time=2026-08-21T14:19:40.967-04:00 level=WARN source=runner.go:152 msg="truncati
 [GIN] 2026/08/21 - 14:20:13 | 200 |  706.360139ms |       127.0.0.1 | POST     "/api/chat"
 time=2026-08-21T14:25:13.985-04:00 level=INFO source=server.go:392 msg="starting runner" cmd="/home/hayesjohn/ollama-app/bin/ollama runner --ollama-engine --port 43751"
 time=2026-08-21T14:25:14.332-04:00 level=INFO source=server.go:392 msg="starting runner" cmd="/home/hayesjohn/ollama-app/bin/ollama runner --ollama-engine --port 38135"
+[GIN] 2026/08/24 - 11:45:13 | 200 |      21.492µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/08/24 - 11:45:13 | 200 |      11.722µs |       127.0.0.1 | GET      "/api/ps"
+time=2026-08-24T11:45:15.553-04:00 level=INFO source=server.go:392 msg="starting runner" cmd="/home/hayesjohn/ollama-app/bin/ollama runner --ollama-engine --port 45351"
+llama_model_loader: loaded meta data with 25 key-value pairs and 291 tensors from /home/hayesjohn/.ollama/models/blobs/sha256-f5074b1221da0f5a2910d33b642efa5b9eb58cfdddca1c79e16d7ad28aa2b31f (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = Mistral-7B-Instruct-v0.3
+llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+llama_model_loader: - kv   3:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 15
+llama_model_loader: - kv  11:                           llama.vocab_size u32              = 32768
+llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,32768]   = ["<unk>", "<s>", "</s>", "[INST]", "[...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,32768]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,32768]   = [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  21:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  22:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  23:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.07 GiB (4.83 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: printing all EOG tokens:
+load:   - 2 ('</s>')
+load: special tokens cache size = 771
+load: token to piece cache size = 0.1731 MB
+print_info: arch             = llama
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 7.25 B
+print_info: general.name     = Mistral-7B-Instruct-v0.3
+print_info: vocab type       = SPM
+print_info: n_vocab          = 32768
+print_info: n_merges         = 0
+print_info: BOS token        = 1 '<s>'
+print_info: EOS token        = 2 '</s>'
+print_info: UNK token        = 0 '<unk>'
+print_info: LF token         = 781 '<0x0A>'
+print_info: EOG token        = 2 '</s>'
+print_info: max token length = 48
+llama_model_load: vocab only - skipping tensors
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=server.go:392 msg="starting runner" cmd="/home/hayesjohn/ollama-app/bin/ollama runner --model /home/hayesjohn/.ollama/models/blobs/sha256-f5074b1221da0f5a2910d33b642efa5b9eb58cfdddca1c79e16d7ad28aa2b31f --port 34089"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=sched.go:443 msg="system memory" total="62.5 GiB" free="51.0 GiB" free_swap="1.9 GiB"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=sched.go:450 msg="gpu memory" id=GPU-3c0f396f-b789-84d8-cdad-2a8553288be5 library=CUDA available="6.5 GiB" free="6.9 GiB" minimum="457.0 MiB" overhead="0 B"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=server.go:459 msg="loading model" "model layers"=33 requested=-1
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=device.go:240 msg="model weights" device=CUDA0 size="3.9 GiB"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=device.go:245 msg="model weights" device=CPU size="105.0 MiB"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=device.go:251 msg="kv cache" device=CUDA0 size="1.5 GiB"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=device.go:262 msg="compute graph" device=CUDA0 size="865.0 MiB"
+time=2026-08-24T11:45:15.835-04:00 level=INFO source=device.go:272 msg="total memory" size="6.3 GiB"
+time=2026-08-24T11:45:15.843-04:00 level=INFO source=runner.go:963 msg="starting go runner"
+load_backend: loaded CPU backend from /home/hayesjohn/ollama-app/lib/ollama/libggml-cpu-alderlake.so
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: NVIDIA GeForce RTX 3070, compute capability 8.6, VMM: yes, ID: GPU-3c0f396f-b789-84d8-cdad-2a8553288be5
+load_backend: loaded CUDA backend from /home/hayesjohn/ollama-app/lib/ollama/cuda_v12/libggml-cuda.so
+time=2026-08-24T11:45:16.034-04:00 level=INFO source=ggml.go:104 msg=system CPU.0.SSE3=1 CPU.0.SSSE3=1 CPU.0.AVX=1 CPU.0.AVX_VNNI=1 CPU.0.AVX2=1 CPU.0.F16C=1 CPU.0.FMA=1 CPU.0.BMI2=1 CPU.0.LLAMAFILE=1 CPU.1.LLAMAFILE=1 CUDA.0.ARCHS=500,520,600,610,700,750,800,860,890,900,1200 CUDA.0.USE_GRAPHS=1 CUDA.0.PEER_MAX_BATCH_SIZE=128 compiler=cgo(gcc)
+time=2026-08-24T11:45:16.034-04:00 level=INFO source=runner.go:999 msg="Server listening on 127.0.0.1:34089"
+time=2026-08-24T11:45:16.043-04:00 level=INFO source=runner.go:893 msg=load request="{Operation:commit LoraPath:[] Parallel:3 BatchSize:512 FlashAttention:false KvSize:12288 KvCacheType: NumThreads:8 GPULayers:32[ID:GPU-3c0f396f-b789-84d8-cdad-2a8553288be5 Layers:32(0..31)] MultiUserCache:false ProjectorPath: MainGPU:0 UseMmap:true}"
+time=2026-08-24T11:45:16.043-04:00 level=INFO source=server.go:1294 msg="waiting for llama runner to start responding"
+time=2026-08-24T11:45:16.043-04:00 level=INFO source=server.go:1328 msg="waiting for server to become available" status="llm server loading model"
+ggml_backend_cuda_device_get_memory device GPU-3c0f396f-b789-84d8-cdad-2a8553288be5 utilizing NVML memory reporting free: 7423787008 total: 8589934592
+llama_model_load_from_file_impl: using device CUDA0 (NVIDIA GeForce RTX 3070) (0000:01:00.0) - 7079 MiB free
+llama_model_loader: loaded meta data with 25 key-value pairs and 291 tensors from /home/hayesjohn/.ollama/models/blobs/sha256-f5074b1221da0f5a2910d33b642efa5b9eb58cfdddca1c79e16d7ad28aa2b31f (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = Mistral-7B-Instruct-v0.3
+llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+llama_model_loader: - kv   3:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 15
+llama_model_loader: - kv  11:                           llama.vocab_size u32              = 32768
+llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,32768]   = ["<unk>", "<s>", "</s>", "[INST]", "[...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,32768]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,32768]   = [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  21:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  22:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  23:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.07 GiB (4.83 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: printing all EOG tokens:
+load:   - 2 ('</s>')
+load: special tokens cache size = 771
+load: token to piece cache size = 0.1731 MB
+print_info: arch             = llama
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 32768
+print_info: n_embd           = 4096
+print_info: n_layer          = 32
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: is_swa_any       = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 14336
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 0
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 1000000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 32768
+print_info: rope_finetuned   = unknown
+print_info: model type       = 7B
+print_info: model params     = 7.25 B
+print_info: general.name     = Mistral-7B-Instruct-v0.3
+print_info: vocab type       = SPM
+print_info: n_vocab          = 32768
+print_info: n_merges         = 0
+print_info: BOS token        = 1 '<s>'
+print_info: EOS token        = 2 '</s>'
+print_info: UNK token        = 0 '<unk>'
+print_info: LF token         = 781 '<0x0A>'
+print_info: EOG token        = 2 '</s>'
+print_info: max token length = 48
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors: offloading 32 repeating layers to GPU
+load_tensors: offloaded 32/33 layers to GPU
+load_tensors:        CUDA0 model buffer size =  3992.50 MiB
+load_tensors:   CPU_Mapped model buffer size =  4169.52 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 3
+llama_context: n_ctx         = 12288
+llama_context: n_ctx_per_seq = 4096
+llama_context: n_batch       = 1536
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = disabled
+llama_context: kv_unified    = false
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.42 MiB
+llama_kv_cache:      CUDA0 KV buffer size =  1536.00 MiB
+llama_kv_cache: size = 1536.00 MiB (  4096 cells,  32 layers,  3/3 seqs), K (f16):  768.00 MiB, V (f16):  768.00 MiB
+llama_context:      CUDA0 compute buffer size =   301.58 MiB
+llama_context:  CUDA_Host compute buffer size =    21.03 MiB
+llama_context: graph nodes  = 1190
+llama_context: graph splits = 4 (with bs=512), 3 (with bs=1)
+time=2026-08-24T11:45:16.796-04:00 level=INFO source=server.go:1332 msg="llama runner started in 0.96 seconds"
+time=2026-08-24T11:45:16.797-04:00 level=INFO source=sched.go:517 msg="loaded runners" count=1
+time=2026-08-24T11:45:16.797-04:00 level=INFO source=server.go:1294 msg="waiting for llama runner to start responding"
+time=2026-08-24T11:45:16.797-04:00 level=INFO source=server.go:1332 msg="llama runner started in 0.96 seconds"
+time=2026-08-24T11:45:16.806-04:00 level=WARN source=runner.go:152 msg="truncating input prompt" limit=4096 prompt=4671 keep=5 new=4096
+[GIN] 2026/08/24 - 11:45:17 | 200 |      19.812µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/08/24 - 11:45:17 | 200 |      19.248µs |       127.0.0.1 | GET      "/api/ps"
+[GIN] 2026/08/24 - 11:45:19 | 500 |  3.792928385s |       127.0.0.1 | POST     "/api/chat"
+time=2026-08-24T11:45:42.920-04:00 level=WARN source=runner.go:152 msg="truncating input prompt" limit=4096 prompt=4671 keep=5 new=4096
+[GIN] 2026/08/24 - 11:45:44 | 200 |      21.283µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/08/24 - 11:45:44 | 200 |      29.317µs |       127.0.0.1 | GET      "/api/ps"
+[GIN] 2026/08/24 - 11:45:46 | 500 |  3.397187331s |       127.0.0.1 | POST     "/api/chat"

@@ -10,18 +10,24 @@ def topic_anchor(topic):
     return "topic-" + quote(topic, safe="")
 
 def extract_doi(raw_txt_path: str) -> str:
-    """Search a _raw.txt file for a DOI and return a doi.org URL, or None if not found."""
-    doi_pattern = re.compile(r'\b(10\.\d{4,}(?:[.\/][^\s\"\'<>]+)+)', re.IGNORECASE)
+    """Return the first DOI found in a raw-text file as a doi.org URL."""
+    doi_pattern = re.compile(
+        r'\b(10\.\d{4,9}/[-._;()/:A-Z0-9]+)',
+        re.IGNORECASE
+    )
+
     try:
-        with open(raw_txt_path, 'r', encoding='utf-8') as f:
-            for line in f:
-                match = doi_pattern.search(line)
-                if match:
-                    doi = match.group(1).rstrip('.,;)')
-                    return f"https://doi.org/{doi}"
+        with open(raw_txt_path, "r", encoding="utf-8") as f:
+            text = f.read()
     except FileNotFoundError:
-        pass
-    return None
+        return None
+
+    match = doi_pattern.search(text)
+    if not match:
+        return None
+
+    doi = match.group(1).rstrip(".,;:)]}")
+    return f"https://doi.org/{doi}"
 
 def load_paper_metadata(directory_path: str, basename: str) -> dict:
     """Load _meta.json for a paper if it exists, otherwise return empty fields."""
@@ -136,7 +142,7 @@ def generate_topic_index(directory_path: str, master_topics_path: str, output_fi
         else:
             link_html = f"<a href='../{pdf_filename}' target='_blank'>View Original (Local)</a>"
 
-        header_html = f"<h3>{basename}</h3>\n<p>{link_html}</p>\n<hr>\n"
+        header_html = f"<h3><a href='https://drive.google.com/drive/folders/1Hs9ifhlZb5HSJ5r51T7jK_gQyfR3npIT'>{basename}.pdf</a></h3>\n<p>{link_html}</p>\n<hr>\n"
 
         # Prepend header to the source HTML if not already done
         with open(html_path, 'r', encoding="utf-8") as f:

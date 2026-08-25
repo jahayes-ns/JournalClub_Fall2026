@@ -1,0 +1,47 @@
+<h3>neuroprostheses</h3>
+<p><a href='https://doi.org/10.1038/s41591-026-04498-0' target='_blank'>View Original (DOI)</a><br/><a href='../neuroprostheses.pdf' target='_blank'>View Original (Local)</a></p>
+<hr>
+<h1>A neuroprosthesis for restoring hand movement and sensation in a person with complete tetraplegia</h1>
+<p><strong>Bouton | 2026</strong></p>
+<hr />
+<h2>Final Summary</h2>
+<p>The research paper presents a hybrid Direct Neural Bypass (DNB) system designed to restore motor and sensory functions in individuals with complete spinal cord injuries. The study combines transcutaneous spinal cord stimulation (tSCS), brain-computer interface (BCI), activity-based training, and cortical microstimulation (CM).</p>
+<p>The primary objective was to enhance upper limb motor function during isometric elbow flexion, resulting in gains of up to 86% and 62% for left and right arms respectively. However, no improvements were observed in hand or triceps muscles or tactile sensation deficits in the distal arm.</p>
+<p>The DNB system involves an LSTM network and nested Reinforcement Learning (RL) network to decode multiple force levels from M1 recordings and stabilize applied force for motor improvement. Sensory recovery was achieved using CM paired with tSCS, leading to persistent somatosensation recovery in the individual for over two months post-cessation of stimulation.</p>
+<p>The study also addresses potential challenges such as optimizing tSCS mapping and stimulation parameters, adapting the iBCI decoder and RL system to interindividual variability, and identifying effective spatiotemporal stimulation patterns for CM. The modular design and transcutaneous approach of the DNB increase its clinical translation potential, improving in-use and post-use functional abilities, leading to independent performance of Activities of Daily Living (ADLs) and social engagement.</p>
+<p>The methods include implanting BCI arrays in a participant's somatosensory and motor cortex for recording neural activity and stimulating specific brain regions. The LSTM network was trained to decode neural activity from primary motor cortex (M1), translate it into hand movements, and predict movement states every 100ms.</p>
+<p>Key findings of the Press and Hold experiment include significant differences in activity at the wrist during rest versus applied pressure but no significant difference in activity for other hand locations. The research also demonstrates that cortical stimulation increases modulation depth, suggesting a unique role of the wrist in pressure perception during the Press and Hold task.</p>
+<hr />
+<h2>Section Summaries</h2>
+<h3>PREAMBLE</h3>
+<p>The study discussed uses transcutaneous spinal cord stimulation (tSCS) to help a patient with spinal cord injury regain upper limb motor function, specifically voluntary force output during isometric elbow flexion for both left and right arms, with gains of up to 86% and 62%, respectively. However, no improvement was observed in muscles of the hand and triceps or tactile sensation deficits in the distal arm. The study involved activity-based training during tSCS administration but did not include a control group.</p>
+<p>The study also targeted specific spinal roots with tSCS based on recruitment profile mapping obtained using anatomical landmarks and electromyogram (EMG) recordings from five muscles of the arm and hand bilaterally. The study did not use a brain-computer interface (BCI), reinforcement learning, or deep Q-networks but did mention incorporating somatosensory feedback and cortical mirroring for restoring tactile sensation in the distal C6–C7 dermatome.</p>
+<p>In another part of the text, a study investigates the effect of transcranial stimulation combined with motor cortex (tSCS+CM) on wrist sensitivity. The intervention significantly improved tactile sensitivity on the radial aspect of the right wrist and increased neural activity recorded in S1 during a 'press and hold' task. Neural activity showed continued increase in modulation for a broadband power sub-band after stimulation ceased, suggesting short-term, electrode-specific plasticity effects that potentiated the wrist sensitivity improvement.</p>
+<h3>DISCUSSION</h3>
+<p>The research paper discusses a hybrid Direct Neural Bypass (DNB) system designed for individuals with complete spinal cord injuries. The system combines assistive, therapeutic, recording, and stimulation modalities to restore motor and sensory functions.</p>
+<p>Two key experiments were conducted:
+1. Motor improvements through an LSTM network and nested Reinforcement Learning (RL) network to decode multiple force levels from M1 recordings and stabilize the applied force.
+2. Sensory recovery using Cortical Microstimulation (CM) paired with transcutaneous Spinal Cord Stimulation (tSCS). The sensory experiment showed persistent somatosensation recovery in an individual, enabling them to detect lower force levels for over two months post-cessation of stimulation.</p>
+<p>The study also highlights the potential combination of these paradigms for future research. However, challenges such as optimizing tSCS mapping and stimulation parameters, adapting the iBCI decoder and RL system to interindividual variability, and identifying effective spatiotemporal stimulation patterns for CM need to be addressed for broader population application.</p>
+<p>The DNB's modular design and transcutaneous approach increase its clinical translation potential. The study demonstrated clinical benefits with only two sessions per week, improving in-use and post-use functional abilities, leading to independent performance of Activities of Daily Living (ADLs) and social engagement.</p>
+<p>The results indicate that the hybrid DNB can engage brain and spinal pathways for precise grasping and sensorimotor recovery in complete Spinal Cord Injury (SCI). Detailed methods, additional references, and data are available at the provided link.</p>
+<h3>METHODS</h3>
+<p>The study focuses on implanting brain-computer interface (BCI) arrays in a participant's somatosensory and motor cortex for recording neural activity and stimulating specific brain regions.</p>
+<p>Methods included:
+1. Sensory testing with tactile perception tests, ICMS, and SIROF microelectrode arrays.
+2. Motor mapping through anesthesia-induced and awake tests to determine hand areas for M1 array implantation.
+3. S1 mapping after S1 array implantation using sensory stimulation waveforms.
+4. Behavioral tasks with the participant performing various attempted movement tasks.
+5. Preprocessing of neural data using windowing, Fourier transform, log-compression, standardization, and scaling techniques.
+6. Feature selection based on the maximum correlation coefficient (MCC).
+7. Locked decoder-training design over several sessions with a Long Short-Term Memory (LSTM) network for real-time movement decoding.</p>
+<p>The LSTM network was trained to decode neural activity from primary motor cortex (M1), translate it into hand movements, and predict movement states every 100ms. The model's performance was evaluated on two sessions.</p>
+<p>Linear mixed modeling revealed that Cortico-Motor Stimulation (CMS) increased modulation depth in stimulated electrodes compared to non-stimulated ones.</p>
+<p>Custom code written in MATLAB, Python, and SAS was used for this research, available upon request to the corresponding author. Due to confidentiality reasons, identifiable patient data are not freely available, but de-identified data requests may be directed to the corresponding author.</p>
+<h3>ACKNOWLEDGEMENTS</h3>
+<p>The study, titled "Press and Hold experiment," conducted using 96 electrodes across 10 sessions, investigates neural modulation in response to applied pressure at various hand locations (thumb pad, index pad, index volar pad, wrist).</p>
+<p>Key findings:
+- Only the wrist showed significant differences in activity during rest versus applied pressure (p = 2.1e-05).
+- There was no significant difference in activity for the thumb pad, index pad, and index volar pad (p &gt; 0.08 for all).
+- The effect of time since stimulation on feature amplitude was observed in non-stimulated electrodes, with neural activity decreasing over time.</p>
+<p>The research also demonstrates that cortical stimulation increases modulation depth, as shown by changes in modulation depth (Figure S9, S10, S11) and selected electrodes for cortical mirroring (Figure S8). These findings suggest a unique role of the wrist in pressure perception during the Press and Hold task.</p>
