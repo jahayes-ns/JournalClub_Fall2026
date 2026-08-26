@@ -180,7 +180,6 @@ def generate_topic_index(directory_path: str, master_topics_path: str, output_fi
     html_content = "<html>\n<head>\n<title>Document Index by Topic</title>\n"
     html_content += "<style>\n"
     html_content += "  body { font-family: Arial, sans-serif; line-height: 1.4; }\n"
-    html_content += "  li { margin-bottom: 16px; }\n"
     html_content += "  h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }\n"
     html_content += "  small { color: #555; }\n"
     html_content += "</style>\n"
@@ -190,27 +189,29 @@ def generate_topic_index(directory_path: str, master_topics_path: str, output_fi
         topic for topic in sorted(topic_mapping)
         if topic_mapping[topic]
     ]
-    html_content += "<h2>Contents</h2>\n<ul>\n"
+    html_content += '<div style="margin-top: 20px;"><a href="#all-papers" style="font-size: 1.1em; font-weight: bold;">View All Papers</a></div>\n'
+    html_content += "<h2>Topics</h2>\n<ul>\n"
+    html_content += '<ul style="column-count: 4; column-gap: 20px; list-style-type: none; padding: 0;">\n'
     for topic in topics_with_files:
         print("topic: " + topic)
         html_content += f'<li><a href="#{topic_anchor(topic)}">{topic}</a></li>\n'
     html_content += "</ul>\n"
-
+  
     html_content += "<h1>Document Index by Topic</h1>\n"
 
     for topic in sorted(topic_mapping.keys()):
         files = topic_mapping[topic]
         if files:
             html_content += f'<h2 id="{topic_anchor(topic)}">{topic}</h2>\n<ul>\n'
-            for file in sorted(files):
+            for file in sorted(files, key=lambda f: file_metadata.get(f, {}).get('title', f)):
                 summary_text = file_summaries.get(file, "")
                 meta = file_metadata.get(file, {})
                 html_content += format_entry_html(file, summary_text, meta)
             html_content += "</ul>\n"
 
     if all_html_files:
-        html_content += "<h2>All</h2>\n<ul>\n"
-        for file in sorted(all_html_files):
+        html_content += '<h2 id="all-papers">All</h2>\n<ul>\n'
+        for file in sorted(all_html_files, key=lambda f: file_metadata.get(f, {}).get('title', f)):
             summary_text = file_summaries.get(file, "")
             meta = file_metadata.get(file, {})
             html_content += format_entry_html(file, summary_text, meta)

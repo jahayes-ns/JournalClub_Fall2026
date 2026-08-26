@@ -27,7 +27,7 @@ def extract_page_text_no_superscripts(page) -> str:
         for line in block.get("lines", []):
             for span in line.get("spans", []):
                 if span["text"].strip():
-                    font_sizes.append(round(span["size"], 1))
+                   font_sizes.append(round(span["size"], 1))
     
     if not font_sizes:
         return ""
@@ -43,8 +43,10 @@ def extract_page_text_no_superscripts(page) -> str:
         for line in block.get("lines", []):
             line_text = ""
             for span in line.get("spans", []):
+                #if span["text"].strip():
+                #   print(f"  [SPAN] size={span['size']:.1f} threshold={superscript_threshold:.1f} kept={round(span['size'],1) >= superscript_threshold} text={span['text']!r}")
                 if round(span["size"], 1) >= superscript_threshold:
-                    line_text += span["text"]
+                   line_text += span["text"]
                 # else: silently drop the superscript span
             if line_text.strip():
                 line_text = re.sub(r'[†‡§¶\*]+', '', line_text)
@@ -201,8 +203,10 @@ def strip_repeated_banners(text: str, search_window: int = 20) -> str:
             candidates.add(stripped)
 
     # Keep only candidates that actually recur after the first window
-    remainder = '\n'.join(lines[search_window:])
-    banners = {c for c in candidates if remainder.count(c) > 1}
+    #remainder = '\n'.join(lines[search_window:])
+    #banners = {c for c in candidates if remainder.count(c) > 1}
+    remainder_lines = set(lines[search_window:])  # or a Counter for >1 check
+    banners = {c for c in candidates if sum(1 for l in lines[search_window:] if l.strip() == c) > 1}
 
     cleaned = [l for l in lines if l.strip() not in banners]
     return '\n'.join(cleaned)
@@ -365,6 +369,7 @@ def extract_paper_metadata(full_text: str, model_name: str) -> dict:
     """Ask Ollama to extract title, author last names, year, and keywords from the raw text."""
     # ── NEW: strip the duplicate "RESEARCH ARTICLE SUMMARY" preamble for Science papers ──
     cleaned_text = strip_summary_block(full_text)
+    print("cleaned text:-------------------------------------------------------\n" + cleaned_text + ":-------------------------------------------------------\n");
     
     cleaned_text = strip_repeated_banners(cleaned_text)
     cleaned_text = clean_line_number_interleaving(cleaned_text) 
