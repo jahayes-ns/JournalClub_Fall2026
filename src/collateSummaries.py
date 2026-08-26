@@ -182,6 +182,7 @@ def generate_topic_index(directory_path: str, master_topics_path: str, output_fi
     html_content += "  body { font-family: Arial, sans-serif; line-height: 1.4; }\n"
     html_content += "  h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }\n"
     html_content += "  small { color: #555; }\n"
+    html_content += "  li { margin-bottom: 16px; }\n"
     html_content += "</style>\n"
     html_content += "</head>\n<body>\n"
 
@@ -194,11 +195,11 @@ def generate_topic_index(directory_path: str, master_topics_path: str, output_fi
     html_content += '<ul style="column-count: 4; column-gap: 20px; list-style-type: none; padding: 0;">\n'
     for topic in topics_with_files:
         print("topic: " + topic)
-        html_content += f'<li><a href="#{topic_anchor(topic)}">{topic}</a></li>\n'
+        html_content += f'<li style="margin-bottom: 0px;"><a href="#{topic_anchor(topic)}">{topic}</a></li>\n' 
     html_content += "</ul>\n"
   
     html_content += "<h1>Document Index by Topic</h1>\n"
-
+    
     for topic in sorted(topic_mapping.keys()):
         files = topic_mapping[topic]
         if files:
